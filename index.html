@@ -1,0 +1,120 @@
+<html>
+
+<head>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <title>CalcuLatte</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" />
+  <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css" />
+
+  <link rel="stylesheet" href="general-interface.css" />
+  <link rel="stylesheet" href="app-basic-calculator.css" />
+  
+</head>
+
+<body>
+  <!-- General Launcher -->
+  <section class="app launcher" id="app-general-launcher">
+    <div class="launcher-infobox" id="app-general-launcher-calculators-infobox">
+      <i class="launcher-infobox-icon fal fa-calculator"></i>
+      <p class="launcher-infobox-text launcher-infobox-active-text">Calculators</p>
+    </div>
+    <div class="launcher-infobox" id="app-general-launcher-converters-infobox">
+      <i class="launcher-infobox-icon fal fa-exchange-alt"></i>
+      <p class="launcher-infobox-text">Converters</p>
+    </div>
+    <div class="launcher-infobox" id="app-general-launcher-solvers-infobox">
+      <i class="launcher-infobox-icon fal fa-equals"></i>
+      <p class="launcher-infobox-text">Solvers</p>
+    </div>
+  </section>
+  <!-- Specific Launchers -->
+  <!-- Calculators Launcher -->
+  <section class="app launcher initiallyAbsent" id="app-calculators-launcher">
+    <div class="launcher-infobox" id="app-calculators-launcher-basic-infobox">
+      <i class="launcher-infobox-icon fal fa-divide"></i>
+      <p class="launcher-infobox-text">Basic</p>
+    </div>
+  </section>
+  <!-- Converters Launcher -->
+  <section class="app launcher initiallyAbsent" id="app-converters-launcher">
+    <div class="launcher-infobox" id="app-converters-launcher-unit-infobox">
+      <i class="launcher-infobox-icon fal fa-ruler-combined"></i>
+      <p class="launcher-infobox-text">Unit</p>
+    </div>
+  </section>
+  <!-- Solvers Launcher -->
+  <section class="app launcher initiallyAbsent" id="app-solvers-launcher">
+    <!--
+    <div class="launcher-infobox" id="app-solvers-launcher-derivative-infobox">
+      <i class="launcher-infobox-icon fal fa-triangle"></i>
+      <p class="launcher-infobox-text">Derivative</p>
+    </div>
+    -->
+    <div class="launcher-infobox" id="app-solvers-launcher-integrationbyparts-infobox">
+      <i class="launcher-infobox-icon fal fa-chart-bar"></i>
+      <p class="launcher-infobox-text">Integration by Parts</p>
+    </div>
+  </section>
+
+  <!-- Actual Apps -->
+  <!-- Basic Calculator -->
+  <section class="app initiallyAbsent" id="app-basic-calculator">
+    <div class="calculator">
+      <div class="calculator__display">0</div>
+      <div class="calculator__keys">
+         <button class="key clear" data-key="12" data-action="clear">AC</button>
+         <button class="key key--operator divide" data-key="111" data-action="divide">/</button>
+         <button class="key key--operator multiply" data-key="106" data-action="multiply">&times;</button>
+         <button class="key key--operator substract" data-key="109" data-action="substract">-</button>
+         
+         <button class="key" data-key="55">7</button>
+         <button class="key" data-key="56">8</button>
+         <button class="key" data-key="57">9</button>
+         <button class="key key--operator add" data-key="107" data-action="add">+</button>
+         <button class="key" data-key="52">4</button>
+         <button class="key" data-key="53">5</button>
+         <button class="key" data-key="54">6</button>
+         <button class="key decimal" data-key="110" data-action="decimal">.</button>
+         <button class="key" data-key="49">1</button>
+         <button class="key" data-key="50">2</button>
+         <button class="key" data-key="51">3</button>
+         <button data-key="48" class="key zero">0</button>
+         <button class="key calculate" data-key="13" data-action="calculate">=</button>
+      </div>
+   </div>
+  </section>
+  <!-- Unit Converter -->
+  <section class="app initiallyAbsent" id="app-unit-converter">
+    
+  </section>
+  <!-- Integration by Parts Solver -->
+  <section class="app initiallyAbsent" id="app-integrationbyparts-solver">
+    
+  </section>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-btn" id="nav-power-btn" title="Shutdown">
+      <i class="nav-btn-icon fal fa-power-off"></i>
+    </div>
+    <div class="nav-btn" id="nav-home-btn" title="Home">
+      <i class="nav-btn-icon fal fa-home"></i>
+    </div>
+    <div class="nav-btn" id="nav-go-btn" title="Go">
+      <i class="nav-btn-icon fal fa-play"></i>
+    </div>
+  </nav>
+
+  <script src="loader.js"></script>
+  <script src="nav.js" async defer></script>
+  <script src="app-basic-calculator.js" async defer></script>
+  
+</body>
+
+</html>
