@@ -1,3 +1,11 @@
+// For information button
+var navInfoBtn = document.getElementById("nav-info-btn");
+navInfoBtn.addEventListener("click", function () {
+  var systemInfoString = "Approximate: " + approximateState + "\nVersion: " + versionState + "\n-\nCoded with ❤️ by Gregory Lim © 2020.\nAll rights reserved.";
+  alert(systemInfoString);
+});
+
+// For home button
 var navHomeBtn = document.getElementById("nav-home-btn");
 navHomeBtn.addEventListener("click", function () {
   location.reload();
@@ -22,7 +30,7 @@ for (var i = 0; i < appInfobox.length; i++) {
   });
 }
 
-
+// For go button
 var navGoBtn = document.getElementById("nav-go-btn");
 navGoBtn.addEventListener("click", function () {
   var appFirstName = document.getElementsByClassName("launcher-infobox-active-text")[0].innerHTML;
@@ -49,7 +57,6 @@ function launchFromGeneral(newAppLauncherID) {
 
 function launchFromSpecific(newAppID, appType) {
   // Loading of JS (via <script></script>)
-  /*
   var newAppScriptID = newAppID + "-scripts";
   if (!document.getElementById(newAppScriptID)) {
     var newAppScript = document.createElement("script");
@@ -57,9 +64,7 @@ function launchFromSpecific(newAppID, appType) {
     newAppScript.src = newAppID + ".js";
     document.getElementsByTagName("body")[0].appendChild(newAppScript);
   }
-  */
   var specificAppLauncherID = "app-" + appType + "s-launcher";
   document.getElementById(specificAppLauncherID).style.display = "none";
   document.getElementById(newAppID).style.display = "flex";
-
 }

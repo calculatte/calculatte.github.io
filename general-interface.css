@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
 /* Reset */
 
+*, *:focus, *:hover {
+  outline: none;
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -36,10 +40,15 @@ table {
   border-spacing: 0;
 }
 
+input, textarea, select, option {
+  border: 0;
+}
+
 /* Definitions */
 
 :root {
   --trueBlack: #000000;
+  --trueWhite: #FFFFFF;
   --white: #FBFBFB;
   --coal: #121212;
   --grey: darkgrey;
@@ -54,12 +63,43 @@ table {
 
 body {
   opacity: 0;
-  background-color: var(--white);
+  background-color: var(--whiter);
   font-family: 'JetBrains Mono';
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   user-select: none;
+}
+
+/* Header */
+
+header {
+  left: 0;
+  top: 0;
+  right: 0;
+  position: fixed;
+  width: 100vw;
+  height: 7vh;
+  background-color: var(--trueBlack);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#header-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
+#header-version {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--darkOrange);
 }
 
 /* Nav */
@@ -102,7 +142,7 @@ nav {
   background-color: var(--lightOrange);
 }
 
-#nav-go-btn, #nav-power-btn {
+#nav-go-btn, #nav-info-btn {
   /* background-color: var(--coal); */
   color: var(--white);
   padding: 10px 20px;
@@ -111,7 +151,7 @@ nav {
   transition: var(--stock);
 }
 
-#nav-go-btn:hover, #nav-power-btn:hover {
+#nav-go-btn:hover, #nav-info-btn:hover {
   color: var(--grey);
 }
 
@@ -119,7 +159,9 @@ nav {
 
 .app {
   width: 100vw;
-  height: calc(100vh - 10vh);
+  height: calc(100vh - 17vh);
+  margin-top: 7vh;
+  margin-bottom: 10vh;
 }
 
 /* App: Launchers */
@@ -164,6 +206,6 @@ nav {
 
 /* Hidden */
 
-.initiallyAbsent {
+.absent {
   display: none;
 }

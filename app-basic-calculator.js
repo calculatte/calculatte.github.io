@@ -1,5 +1,5 @@
-const basicCalculator = document.querySelector('.calculator');
-const keys = basicCalculator.querySelector('.calculator__keys');
+const calculator = document.querySelector('.calculator');
+const keys = calculator.querySelector('.calculator__keys');
 const display = document.querySelector('.calculator__display');
 const clear = document.querySelector('.clear');
 const buttonKeys = document.querySelectorAll('.key');
@@ -10,8 +10,10 @@ const targetEvent = e => {
   const action = key.dataset.action;
   const keyContent = key.textContent;
   const displayedNum = display.textContent.substring(0, 11);
-  const previousKeyType = basicCalculator.dataset.previousKeyType;
+  const previousKeyType = calculator.dataset.previousKeyType;
+  // To make arithmetic calculation by combining inputs
   const basicCalculate = (n1, operator, n2) => {
+    // To convert number as string to number as number
     const firstNum = parseFloat(n1);
     const secondNum = parseFloat(n2);
     if (operator === 'add') { return firstNum + secondNum; }
@@ -22,9 +24,10 @@ const targetEvent = e => {
   const keyPress = document.querySelector(`button[data-key="${e.keyCode}"]`);
 
   if (key.matches('button')) {
-
+    // To remove is-depressed class from button
     Array.from(key.parentNode.children).forEach(k => k.classList.remove('is-depressed'));
 
+    // For key clicks
     if (!action) {
       if (
         displayedNum === "0" ||
@@ -37,24 +40,25 @@ const targetEvent = e => {
       } else {
         display.textContent = displayedNum + keyContent;
       }
-      basicCalculator.dataset.previousKeyType = 'number';
+      calculator.dataset.previousKeyType = 'number';
     }
 
     if (action === 'add' || action === 'substract' || action === 'multiply' || action === 'divide') {
-      const firstValue = basicCalculator.dataset.firstValue;
-      const operator = basicCalculator.dataset.operator;
+      const firstValue = calculator.dataset.firstValue;
+      const operator = calculator.dataset.operator;
       const secondValue = displayedNum;
+      // For chained arithmetic operations
       if (firstValue && operator && previousKeyType !== 'operator' && previousKeyType !== 'calculate') {
         const calcValue = basicCalculate(firstValue, operator, secondValue);
         display.textContent = calcValue;
-        basicCalculator.dataset.firstValue = calcValue;
+        calculator.dataset.firstValue = calcValue;
       } else {
-        basicCalculator.dataset.firstValue = displayedNum;
+        calculator.dataset.firstValue = displayedNum;
       }
 
       key.classList.add('is-depressed');
-      basicCalculator.dataset.previousKeyType = 'operator';
-      basicCalculator.dataset.operator = action;
+      calculator.dataset.previousKeyType = 'operator';
+      calculator.dataset.operator = action;
     }
 
     if (action === 'decimal') {
@@ -63,17 +67,17 @@ const targetEvent = e => {
       } else {
         display.textContent = '0.';
       }
-      basicCalculator.dataset.previousKeyType = 'decimal';
+      calculator.dataset.previousKeyType = 'decimal';
     }
 
     if (action === 'clear') {
-      const previousOperator = basicCalculator.dataset.operator;
-      const previousOperatorKey = basicCalculator.querySelector(`[data-action='${previousOperator}']`)
+      const previousOperator = calculator.dataset.operator;
+      const previousOperatorKey = calculator.querySelector(`[data-action='${previousOperator}']`)
       if (key.textContent === 'AC') {
-        basicCalculator.dataset.firstValue = '';
-        basicCalculator.dataset.operator = '';
-        basicCalculator.dataset.modValue = '';
-        basicCalculator.dataset.previousKeyType = '';
+        calculator.dataset.firstValue = '';
+        calculator.dataset.operator = '';
+        calculator.dataset.modValue = '';
+        calculator.dataset.previousKeyType = '';
       } else if (previousOperator) {
         key.textContent = 'AC';
         previousOperatorKey.classList.add('is-depressed');
@@ -81,34 +85,39 @@ const targetEvent = e => {
         key.textContent = 'AC';
       }
       display.textContent = '0';
-      basicCalculator.dataset.previousKeyType = 'clear';
+      calculator.dataset.previousKeyType = 'clear';
     }
 
     if (action !== 'clear') {
-      const clearButton = basicCalculator.querySelector('[data-action=clear]');
+      const clearButton = calculator.querySelector('[data-action=clear]');
       clearButton.textContent = 'CE';
     }
 
     if (action === 'calculate') {
-      let firstValue = basicCalculator.dataset.firstValue;
-      const operator = basicCalculator.dataset.operator;
+      let firstValue = calculator.dataset.firstValue;
+      const operator = calculator.dataset.operator;
       let secondValue = displayedNum;
       if (firstValue) {
+        // To repeat previous arithmetic operation
         if (previousKeyType === 'calculate') {
           firstValue = displayedNum;
-          secondValue = basicCalculator.dataset.modValue;
+          secondValue = calculator.dataset.modValue;
         }
+        // To display result
         display.textContent = basicCalculate(firstValue, operator, secondValue);
       }
-      basicCalculator.dataset.modValue = secondValue;
-      basicCalculator.dataset.previousKeyType = 'calculate';
+      calculator.dataset.modValue = secondValue;
+      calculator.dataset.previousKeyType = 'calculate';
     }
 
   }
+
+  // For keyboard presses
   if (keyPress) {
     const pressContent = keyPress.textContent;
     const keyAction = keyPress.dataset.action;
     keyPress.classList.add('is-pressed');
+    // To remove is-depressed class from button
     Array.from(keyPress.parentNode.children).forEach(k => k.classList.remove('is-depressed'));
     function removeTransition(e) {
       if (e.propertyName !== "opacity") return;
@@ -124,71 +133,77 @@ const targetEvent = e => {
       } else {
         display.textContent = displayedNum + pressContent;
       }
-      basicCalculator.dataset.previousKeyType = 'number';
+      calculator.dataset.previousKeyType = 'number';
     }
 
     if (keyAction === 'add' || keyAction === 'substract' || keyAction === 'multiply' || keyAction === 'divide') {
-      const firstValue = basicCalculator.dataset.firstValue;
-      const operator = basicCalculator.dataset.operator;
+      const firstValue = calculator.dataset.firstValue;
+      const operator = calculator.dataset.operator;
       const secondValue = displayedNum;
+      // For chained arithmetic operations
       if (firstValue && operator && previousKeyType !== 'operator' && previousKeyType !== 'calculate') {
         const calcValue = basicCalculate(firstValue, operator, secondValue);
         display.textContent = calcValue;
-        basicCalculator.dataset.firstValue = calcValue;
+        calculator.dataset.firstValue = calcValue;
       } else {
-        basicCalculator.dataset.firstValue = displayedNum;
+        calculator.dataset.firstValue = displayedNum;
       }
 
       keyPress.classList.add('is-depressed');
-      basicCalculator.dataset.previousKeyType = 'operator';
-      basicCalculator.dataset.operator = keyAction;
+      calculator.dataset.previousKeyType = 'operator';
+      calculator.dataset.operator = keyAction;
     }
+
     if (keyAction === 'decimal') {
       if (!displayedNum.includes('.') && previousKeyType !== 'operator' && previousKeyType !== 'calculate') {
         display.textContent = displayedNum + '.';
       } else {
         display.textContent = '0.';
       }
-      basicCalculator.dataset.previousKeyType = 'decimal';
+      calculator.dataset.previousKeyType = 'decimal';
     }
 
     if (keyAction === 'clear') {
-      const previousOperator = basicCalculator.dataset.operator;
-      const previousOperatorKey = basicCalculator.querySelector(`[data-action='${previousOperator}']`)
+      const previousOperator = calculator.dataset.operator;
+      const previousOperatorKey = calculator.querySelector(`[data-action='${previousOperator}']`)
       if (keyPress.textContent === 'AC') {
-        basicCalculator.dataset.firstValue = '';
-        basicCalculator.dataset.operator = '';
-        basicCalculator.dataset.modValue = '';
-        basicCalculator.dataset.previousKeyType = '';
+        calculator.dataset.firstValue = '';
+        calculator.dataset.operator = '';
+        calculator.dataset.modValue = '';
+        calculator.dataset.previousKeyType = '';
       } else {
         keyPress.textContent = 'AC';
         previousOperatorKey.classList.add('is-depressed');
       }
       display.textContent = '0';
-      basicCalculator.dataset.previousKeyType = 'clear';
+      calculator.dataset.previousKeyType = 'clear';
     }
 
     if (keyAction !== 'clear') {
-      const clearButton = basicCalculator.querySelector('[data-action=clear]');
+      const clearButton = calculator.querySelector('[data-action=clear]');
       clearButton.textContent = 'CE';
     }
 
     if (keyAction === 'calculate') {
-      let firstValue = basicCalculator.dataset.firstValue;
-      const operator = basicCalculator.dataset.operator;
+      let firstValue = calculator.dataset.firstValue;
+      const operator = calculator.dataset.operator;
       let secondValue = displayedNum;
       if (firstValue) {
+        // To repeat previous arithmetic operation
         if (previousKeyType === 'calculate') {
           firstValue = displayedNum;
-          secondValue = basicCalculator.dataset.modValue;
+          secondValue = calculator.dataset.modValue;
         }
+        // To display result
         display.textContent = basicCalculate(firstValue, operator, secondValue);
       }
-      basicCalculator.dataset.modValue = secondValue;
-      basicCalculator.dataset.previousKeyType = 'calculate';
+      calculator.dataset.modValue = secondValue;
+      calculator.dataset.previousKeyType = 'calculate';
     }
   };
 
 }
+
+// To listen for key clicks and keyboard presses
 keys.addEventListener('click', targetEvent, false);
 document.addEventListener('keydown', targetEvent, false);

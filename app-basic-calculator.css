@@ -37,7 +37,7 @@
 #app-basic-calculator .calculator__display {
   background-color: var(--coal);
   color: var(--white);
-  padding: 36px 0;
+  padding-bottom: 36px;
   font-size: 36px;
   font-weight: 500;
   /* border-top-left-radius: 12px;
