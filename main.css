@@ -24,7 +24,6 @@ html, body {
     font-family: 'Poppins';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    box-sizing: border-box;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -134,8 +133,8 @@ header p {
 div.card {
     display: flex;
     flex-flow: column nowrap;
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     margin: 2rem;
     align-items: center;
     align-content: center;
@@ -174,9 +173,9 @@ div.card:hover h2 {
 
 div.card i {
     color: var(--orange-dark);
-    font-size: 3.6rem;
+    font-size: 4rem;
     text-align: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
 }
 
 div.card h2 {
@@ -211,8 +210,8 @@ div.card h2 {
         margin-top: calc(0.66 * 0.8rem);
     }
     div.card {
-        width: calc(0.66 * 180px);
-        height: calc(0.66 * 180px);
+        width: calc(0.66 * 120px);
+        height: calc(0.66 * 120px);
         margin: calc(0.66 * 2rem);
         padding: calc(0.66 * 20px);
     }
@@ -220,8 +219,8 @@ div.card h2 {
         margin: calc(0.66 * 1rem) calc(0.66 * 2rem) calc(0.66 * 3rem) calc(0.66 * 2rem);
     }
     div.card i {
-        font-size: calc(0.66 * 3.6rem);
-        margin-bottom: calc(0.66 * 0.5em);
+        font-size: calc(0.66 * 4rem);
+        margin-bottom: calc(0.66 * 0.5rem);
     }
     div.card h2 {
         font-size: calc(0.66 * 1.2rem);
