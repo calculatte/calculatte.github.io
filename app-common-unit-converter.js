@@ -1,4 +1,4 @@
-var cat = document.getElementById("common-unit-converter-category");
+const cat = document.getElementById("common-unit-converter-category");
 
 cat.addEventListener("change", function () {
   var catValue = cat.value;
@@ -14,7 +14,7 @@ cat.addEventListener("change", function () {
   }
 }, false);
 
-document.getElementById("common-unit-converter-equals-btn").addEventListener("click", function () {
+document.querySelector("#common-unit-converter-equals-btn").addEventListener("click", function () {
   var catValue = cat.value;
   var mapFrom = document.getElementById("common-unit-converter-" + catValue + "-unit-input").value;
   var mapTo = document.getElementById("common-unit-converter-" + catValue + "-unit-output").value;

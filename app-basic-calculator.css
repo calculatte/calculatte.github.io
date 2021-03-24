@@ -79,25 +79,22 @@
 
 @media only screen and (max-width: 600px) {
   #basic-calculator #basic-calculator-display {
-    padding: 1rem;
+    padding: calc(0.66 * 2rem);
   }
   #basic-calculator #basic-calculator-display-cli {
-    font-size: 0.5rem;
-    letter-spacing: 0.25rem;
-    margin-bottom: 0.5rem;
+    height: calc(0.66 * 1rem);
+    letter-spacing: calc(0.66 * 0.5rem);
+    margin-bottom: calc(0.66 * 1rem);
   }
   #basic-calculator #basic-calculator-display-output {
-    font-size: 1.2rem;
+    font-size: calc(0.66 * 2.4rem);
   }
   #basic-calculator #basic-calculator-numpad {
-    display: grid;
-    grid-gap: 0.5rem;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    padding: 1rem;
+    grid-gap: calc(0.66 * 1rem);
+    padding: calc(0.66 * 2rem);
   }
   #basic-calculator .basic-calculator-numpad-key {
-    font-size: 0.8rem;
-    padding: 10px;
+    font-size: calc(0.66 * 1.6rem);
+    padding: calc(0.66 * 20px);
   }
 }

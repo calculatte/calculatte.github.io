@@ -1,0 +1,71 @@
+#gcd-hcf-solver {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#gcd-hcf-solver #gcd-hcf-solver-first-input {
+  margin-right: 1rem;
+}
+
+#gcd-hcf-solver input {
+  width: 240px;
+  height: 64px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid var(--border-grime);
+  border-radius: 4px;
+  background: var(--bg-shadow-dark);
+  font-family: 'JetBrains Mono';
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  transition: var(--stock);
+}
+
+#gcd-hcf-solver input:hover {
+  border: 1px solid var(--bg-milk);
+}
+
+#gcd-hcf-solver input:focus {
+  color: var(--text-light);
+  border: 1px solid var(--orange-dark);
+}
+
+#gcd-hcf-solver #gcd-hcf-solver-equals-btn {
+  font-size: 1.6rem;
+  background-color: var(--orange-dark);
+  color: var(--text-dark);
+  padding: 20px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  transition: var(--stock);
+  cursor: pointer;
+}
+
+#gcd-hcf-solver #gcd-hcf-solver-equals-btn:hover {
+  background-color: var(--orange-light);
+  color: var(--text-light);
+}
+
+@media only screen and (max-width: 600px) {
+  #gcd-hcf-solver #gcd-hcf-solver-first-input {
+    margin-right: calc(0.66 * 1rem);
+  }
+  #gcd-hcf-solver input {
+    width: calc(0.66 * 240px);
+    height: calc(0.66 * 64px);
+    padding-left: calc(0.66 * 12px);
+    padding-right: calc(0.66 * 12px);
+    font-size: calc(0.66 * 1.2rem);
+  }
+  #gcd-hcf-solver #gcd-hcf-solver-equals-btn {
+    font-size: calc(0.66 * 1.6rem);
+    padding: calc(0.66 * 20px);
+    margin-top: calc(0.66 * 3rem);
+    margin-bottom: calc(0.66 * 3rem);
+  }
+}

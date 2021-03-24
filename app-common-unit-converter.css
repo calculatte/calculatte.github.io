@@ -43,11 +43,12 @@
   border-top: 1px solid var(--border-grime);
   border-left: 1px solid var(--border-grime);
   border-right: 1px solid var(--border-grime);
+  border-bottom: 0;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   background: var(--bg-shadow-dark);
   font-family: 'JetBrains Mono';
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: var(--text-dark);
   transition: var(--stock);
 }
@@ -70,7 +71,7 @@
   margin-bottom: 3rem;
 }
 
-#common-unit-converter .equals-btn {
+#common-unit-converter #common-unit-converter-equals-btn {
   font-size: 1.6rem;
   background-color: var(--orange-dark);
   color: var(--text-dark);
@@ -84,7 +85,7 @@
   cursor: pointer;
 }
 
-#common-unit-converter .equals-btn:hover {
+#common-unit-converter #common-unit-converter-equals-btn:hover {
   background-color: var(--orange-light);
   color: var(--text-light);
 }
@@ -99,24 +100,25 @@
 
 @media only screen and (max-width: 600px) {
   #common-unit-converter select {
-    font-size: 0.6rem;
-    padding: 6px;
-    width: 180px;
+    font-size: calc(0.66 * 1.2rem);
+    padding: calc(0.66 * 12px);
+    width: calc(0.66 * 360px);
   }
   #common-unit-converter input {
-    width: 180px;
-    height: 32px;
-    padding-left: 6px;
-    padding-right: 6px;
-    font-size: 0.8rem;
+    width: calc(0.66 * 360px);
+    height: calc(0.66 * 64px);
+    padding-left: calc(0.66 * 12px);
+    padding-right: calc(0.66 * 12px);
+    font-size: calc(0.66 * 1.2rem);
   }
   #common-unit-converter #common-unit-converter-category {
-    margin-bottom: 1.5rem;
+    border-radius: calc(0.66 * 2px);
+    margin-bottom: calc(0.66 * 3rem);
   }
-  #common-unit-converter .equals-btn {
-    font-size: 0.8rem;
-    padding: 10px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  #common-unit-converter #common-unit-converter-equals-btn {
+    font-size: calc(0.66 * 1.6rem);
+    padding: calc(0.66 * 20px);
+    margin-top: calc(0.66 * 3rem);
+    margin-bottom: calc(0.66 * 3rem);
   }
 }

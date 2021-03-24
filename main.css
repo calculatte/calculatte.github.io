@@ -188,46 +188,42 @@ div.card h2 {
 }
 
 @media only screen and (max-width: 600px) {
-    .app-launcher {
-        padding: 0;
-    }
+    /*calc(0.66 * */
     nav {
-        height: 40px;
-        margin-bottom: 60px;
+        height: calc(0.66 * 80px);
+        margin-bottom: calc(0.66 * 120px);
     }
     .nav-item {
-        font-size: 0.6rem;
-        margin: 0 2.5rem;
+        font-size: calc(0.66 * 1.2rem);
+        margin: calc(0.66 * 0) calc(0.66 * 5rem);
     }
     .nav-item p {
-        margin-left: 0.3rem;
+        margin-left: calc(0.66 * 0.6rem);
     }
     header {
-        height: 125px;
+        height: calc(0.66 * 250px);
     }
     header h1 {
-        font-size: 1.8rem;
+        font-size: calc(0.66 * 3.6rem);
     }
     header p {
-        font-size: 0.5rem;
-        margin-top: 0.4rem;
+        font-size: calc(0.66 * 1rem);
+        margin-top: calc(0.66 * 0.8rem);
     }
     div.card {
-        width: 90px;
-        height: 90px;
-        margin: 1rem;
-        padding: 10px;
+        width: calc(0.66 * 180px);
+        height: calc(0.66 * 180px);
+        margin: calc(0.66 * 2rem);
+        padding: calc(0.66 * 20px);
     }
     div.card:hover {
-        margin: 0.5rem 1rem 1.5rem 1rem;
+        margin: calc(0.66 * 1rem) calc(0.66 * 2rem) calc(0.66 * 3rem) calc(0.66 * 2rem);
     }
     div.card i {
-        font-size: 1.8rem;
-        margin-bottom: 0.25em;
+        font-size: calc(0.66 * 3.6rem);
+        margin-bottom: calc(0.66 * 0.5em);
     }
     div.card h2 {
-        font-size: 0.6rem;
+        font-size: calc(0.66 * 1.2rem);
     }
 }
-
-@media only screen and (min-width: 600px) {}
