@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="manifest" href="https://calculatte.github.io/site.webmanifest" />
+  <!-- Vendor -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" />
+  <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Non-vendor -->
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="app-common-unit-converter.css" />
+  <title>CalcuLatte</title>
+  <!-- Vendor -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-item" href="launcher-converters.html">
+      <i class="fal fa-arrow-alt-circle-left" href="launcher-converters.html"></i>
+      <p href="launcher-converters.html">Back</p>
+    </div>
+  </nav>
+
+  <section id="common-unit-converter" data-aos="fade-up">
+    <div class="container">
+      <select id="common-unit-converter-category">
+        <option value="area">Area</option>
+        <option value="length">Length</option>
+        <option value="mass">Mass</option>
+      </select>
+      <input type="text" id="common-unit-converter-number-input" value="0" />
+      <select class="common-unit-converter-unit common-unit-converter-area-unit" id="common-unit-converter-area-unit-input">
+        <option value="0">square kilometre (km²)</option>
+        <option value="1">square metre (m²)</option>
+        <option value="2">square mile (mi²)</option>
+        <option value="3">square yard (yd²)</option>
+        <option value="4">square foot (ft²)</option>
+        <option value="5">square inch (in²)</option>
+      </select>
+      <select class="common-unit-converter-unit common-unit-converter-length-unit" id="common-unit-converter-length-unit-input">
+        <option value="0">kilometre (km)</option>
+        <option value="1">metre (m)</option>
+        <option value="2">centimetre (cm)</option>
+        <option value="3">millimetre (mm)</option>
+        <option value="4">micrometre (µm)</option>
+        <option value="5">nanometre (nm)</option>
+        <option value="6">mile (mi)</option>
+        <option value="7">yard (yd)</option>
+        <option value="8">foot (ft)</option>
+        <option value="9">inch (in)</option>
+      </select>
+      <select class="common-unit-converter-unit common-unit-converter-mass-unit" id="common-unit-converter-mass-unit-input">
+        <option value="0">metric ton/tonne (t)</option>
+        <option value="1">kilogram (kg)</option>
+        <option value="2">gram (g)</option>
+        <option value="3">milligram (mg)</option>
+        <option value="4">microgram (µg)</option>
+        <option value="5">imperial ton/long ton (long tn)</option>
+        <option value="6">US ton/short ton (T)</option>
+        <option value="7">stone (st)</option>
+        <option value="8">pound (lb)</option>
+        <option value="9">ounce (oz)</option>
+      </select>
+      <div class="equals-btn" id="common-unit-converter-equals-btn" title="Convert">
+        =
+      </div>
+      <input type="text" id="common-unit-converter-output" disabled value="0" />
+      <select class="common-unit-converter-unit common-unit-converter-area-unit" id="common-unit-converter-area-unit-output">
+        <option value="1,0.000001,2.58999,0.00000083613,0.000000092903,0.00000000064516">square kilometre (km²)</option>
+        <option value="1000000,1,2590000,0.836127,0.092903,0.00064516">square metre (m²)</option>
+        <option value="0.386102,0.0000003861,1,0.00000032283,0.00000003587,0.0000000002491">square mile (mi²)</option>
+        <option value="1196000,1.19599,3098000,1,0.111111,0.000771605">square yard (yd²)</option>
+        <option value="10760000,10.7639,27880000,9,1,0.00694444">square foot (ft²)</option>
+        <option value="1550000000,1550,4014000000,1296,144,1">square inch (in²)</option>
+      </select>
+      <select class="common-unit-converter-unit common-unit-converter-length-unit" id="common-unit-converter-length-unit-output">
+        <option value="1,0.001,0.00001,0.000001,0.000000001,0.000000000001,1.60934,0.0009144,0.0003048,0.0000254">kilometre (km)</option>
+        <option value="1000,1,0.01,0.001,0.000001,0.000000001,1609.34,0.9144,0.3048,0.0254">metre (m)</option>
+        <option value="100000,100,1,0.1,0.0001,0.0000001,160934,91.44,30.48,2.54">centimetre (cm)</option>
+        <option value="1000000,1000,10,1,0.001,0.000001,1609000,914.4,304.8,25.4">millimetre (mm)</option>
+        <option value="1000000000,1000000,10000,1000,1,0.001,1609000000,914400,304800,25400,">micrometre (µm)</option>
+        <option value="1000000000000,1000000000,10000000,1000000,1000,1,1609000000000,914400000,304800000,25400000">nanometre (nm)</option>
+        <option value="0.621371,0.000621371,0.0000062137,0.00000062137,0.00000000062137,0.00000000000062137,1,0.000568182,0.000189394,0.000015783">mile (mi)</option>
+        <option value="1093.61,1.09361,0.0109361,0.00109361,0.0000010936,0.0000000010936,1760,1,0.333333,0.0277778">yard (yd)</option>
+        <option value="3280.84,3.28084,0.0328084,0.00328084,0.0000032808,0.0000000032808,5280,3,1,0.0833333">foot (ft)</option>
+        <option value="39370.1,39.3701,0.393701,0.0393701,0.00003937,0.00000003937,63360,36,12,1">inch (in)</option>
+      </select>
+      <select class="common-unit-converter-unit common-unit-converter-mass-unit" id="common-unit-converter-mass-unit-output">
+        <option value="1,0.001,0.000001,0.000000001,0.000000000001,1.01605,0.907185,0.00635029,0.000453592,0.00002835">metric ton/tonne (t)</option>
+        <option value="1000,1,0.001,0.000001,0.000000001,1016.05,907.185,6.35029,0.453592,0.0283495">kilogram (kg)</option>
+        <option value="1000000,1000,1,0.001,0.000001,1016000,907185,6350.29,453.592,28.3495">gram (g)</option>
+        <option value="1000000000,1000000,1000,1,0.001,1016000000,907200000,6350000,453592,28349.5">milligram (mg)</option>
+        <option value="1000000000000,1000000000,1000000,1000,1,1016000000000,907200000000,6350000000,453600000,28350000">microgram (µg)</option>
+        <option value="0.984207,0.000984207,0.00000098421,0.00000000098421,0.00000000000098421,1,0.892857,0.00625,0.000446429,0.000027902">imperial ton/long ton (long tn)</option>
+        <option value="1.10231,0.00110231,0.0000011023,0.0000000011023,0.0000000000011023,1.12,1,0.007,0.0005,0.00003125">US ton/short ton (T)</option>
+        <option value="157.473,0.157473,0.000157473,0.00000015747,0.00000000015747,160,142.857,1,0.0714286,0.00446429">stone (st)</option>
+        <option value="2204.62,2.20462,0.00220462,0.0000022046,0.0000000022046,2240,2000,14,1,0.0625">pound (lb)</option>
+        <option value="35274,35.274,0.035274,0.000035274,0.000000035274,35840,32000,224,16,1">ounce (oz)</option>
+      </select>
+    </div>
+  </section>
+
+  <script src="links.js"></script>
+  <script src="loader.js"></script>
+  <script src="app-common-unit-converter.js"></script>
+</body>
+
+</html>

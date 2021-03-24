@@ -1,79 +1,103 @@
-#app-basic-calculator {
-  font-family: 'JetBrains Mono';
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--coal);
+#basic-calculator {
+  width: auto;
 }
 
-#app-basic-calculator button {
+#basic-calculator #basic-calculator-display {
+  padding: 2rem;
+}
+
+#basic-calculator #basic-calculator-display-cli {
   font-family: 'JetBrains Mono';
-  font-size: 24px;
+  font-size: auto;
+  height: 1rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  text-align: right;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#basic-calculator #basic-calculator-display-output {
+  font-family: 'JetBrains Mono';
+  font-size: 2.4rem;
   font-weight: 500;
+  color: var(--text-light);
+  text-align: right;
+}
+
+#basic-calculator #basic-calculator-numpad {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  padding: 2rem;
+}
+
+#basic-calculator .basic-calculator-numpad-key {
+  font-family: 'JetBrains Mono';
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  text-align: center;
+  height: auto;
+  width: auto;
+  padding: 20px;
   border: 0;
   border-radius: 50%;
-  background: var(--coal);
-  color: var(--white);
-  height: 72px;
-  outline: 0;
-  cursor: pointer;
   transition: var(--stock);
-  text-align: center;
+  -webkit-transition: var(--stock);
+  -moz-transition: var(--stock);
+  cursor: pointer;
 }
 
-#app-basic-calculator button:hover, #app-basic-calculator button:active, #app-basic-calculator button.is-depressed {
-  background: var(--whiteSilhouette);
+#basic-calculator .basic-calculator-numpad-transparent {
+  background: transparent;
 }
 
-#app-basic-calculator .is-pressed {
-  opacity: 0.8;
+#basic-calculator .basic-calculator-numpad-transparent:hover {
+  background: var(--silhouette-light);
+  color: var(--text-light);
 }
 
-#app-basic-calculator .calculator {
-  width: 360px;
-  height: auto;
+#basic-calculator .basic-calculator-numpad-orange {
+  background: var(--orange-dark);
 }
 
-#app-basic-calculator .calculator__display {
-  background-color: var(--coal);
-  color: var(--white);
-  padding-bottom: 36px;
-  font-size: 36px;
-  font-weight: 500;
-  /* border-top-left-radius: 12px;
-  border-top-right-radius: 12px; */
-  text-align: right;
-  overflow: hidden;
+#basic-calculator .basic-calculator-numpad-orange:hover {
+  background: var(--orange-light);
+  color: var(--text-light);
 }
 
-#app-basic-calculator .calculator__keys {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-gap: 24px;
-  background: var(--coal);
-  text-align: center;
-  /* border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px; */
+#basic-calculator .basic-calculator-numpad-grey {
+  background: var(--silhouette-dark);
 }
 
-#app-basic-calculator .calculator__keys .zero {
-  grid-row: 0.8333333333;
-  grid-column: 0.3333333333;
+#basic-calculator .basic-calculator-numpad-grey:hover {
+  background: var(--silhouette-light);
+  color: var(--text-light);
 }
 
-#app-basic-calculator .calculator__keys .calculate {
-  grid-row: 0.5;
-  grid-column: 0.8;
-  background: var(--darkOrange);
-  /* border-bottom-left-radius: 12px; */
-}
-
-#app-basic-calculator .calculator__keys .calculate:hover {
-  background: var(--lightOrange);
-}
-
-#app-basic-calculator .calculator__keys .clear {
-  grid-row: 0.6666666667;
-  grid-column: 0.8;
+@media only screen and (max-width: 600px) {
+  #basic-calculator #basic-calculator-display {
+    padding: 1rem;
+  }
+  #basic-calculator #basic-calculator-display-cli {
+    font-size: 0.5rem;
+    letter-spacing: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  #basic-calculator #basic-calculator-display-output {
+    font-size: 1.2rem;
+  }
+  #basic-calculator #basic-calculator-numpad {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 1rem;
+  }
+  #basic-calculator .basic-calculator-numpad-key {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
 }

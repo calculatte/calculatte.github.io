@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="manifest" href="https://calculatte.github.io/site.webmanifest" />
+  <!-- Vendor -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" />
+  <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Non-vendor -->
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="app-basic-calculator.css" />
+  <title>CalcuLatte</title>
+  <!-- Vendor -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-item" href="launcher-calculators.html">
+      <i class="fal fa-arrow-alt-circle-left" href="launcher-calculators.html"></i>
+      <p href="launcher-calculators.html">Back</p>
+    </div>
+  </nav>
+
+  <section id="basic-calculator" data-aos="fade-up">
+    <div id="basic-calculator-display">
+      <div id="basic-calculator-display-cli"></div>
+      <div id="basic-calculator-display-output">0</div>
+    </div>
+    <div id="basic-calculator-numpad">
+      <!-- First row -->
+      <button data-key="AC" class="basic-calculator-numpad-key basic-calculator-numpad-grey">AC</button>
+      <button data-key="(" class="basic-calculator-numpad-key basic-calculator-numpad-grey">(</button>
+      <button data-key=")" class="basic-calculator-numpad-key basic-calculator-numpad-grey">)</button>
+      <button data-key="/" class="basic-calculator-numpad-key basic-calculator-numpad-grey">÷</button>
+
+      <!-- Second row -->
+      <button data-key="7" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">7</button>
+      <button data-key="8" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">8</button>
+      <button data-key="9" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">9</button>
+      <button data-key="*" class="basic-calculator-numpad-key basic-calculator-numpad-grey">×</button>
+
+      <!-- Third row -->
+      <button data-key="4" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">4</button>
+      <button data-key="5" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">5</button>
+      <button data-key="6" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">6</button>
+      <button data-key="-" class="basic-calculator-numpad-key basic-calculator-numpad-grey">-</button>
+
+      <!-- Fourth row -->
+      <button data-key="1" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">1</button>
+      <button data-key="2" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">2</button>
+      <button data-key="3" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">3</button>
+      <button data-key="+" class="basic-calculator-numpad-key basic-calculator-numpad-grey">+</button>
+
+      <!-- Fifth row -->
+      <button data-key="0" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">0</button>
+      <button data-key="." class="basic-calculator-numpad-key basic-calculator-numpad-transparent">.</button>
+      <button data-key="%" class="basic-calculator-numpad-key basic-calculator-numpad-transparent">%</button>
+      <button data-key="=" class="basic-calculator-numpad-key basic-calculator-numpad-orange">=</button>
+
+    </div>
+
+  </section>
+
+  <script src="links.js"></script>
+  <script src="loader.js"></script>
+  <script defer src="app-basic-calculator.js"></script>
+</body>
+
+</html>

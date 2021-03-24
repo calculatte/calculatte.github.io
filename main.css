@@ -1,0 +1,233 @@
+:root {
+    font-size: 13px;
+    --silhouette-light: rgba(255, 255, 255, 0.1);
+    --silhouette-dark: rgba(0, 0, 0, 0.1);
+    --orange-light: #F5A00D;
+    --orange-dark: #ED8200;
+    --text-dark: #DEDEDE;
+    --text-light: #FBFBFB;
+    --bg-milk: #F0F0F0;
+    --bg-white: #FBFBFB;
+    --border-grime: #040405;
+    --bg-night: #18191C;
+    --bg-shadow-light: #36393F;
+    --bg-shadow-dark: #2F3136;
+    --link-dark: #00B0F4;
+    --stock: all 0.1s ease-in-out;
+}
+
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+html, body {
+    font-family: 'Poppins';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+body {
+    background: var(--bg-shadow-light);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    background: var(--bg-night);
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 80px;
+    margin-bottom: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-item {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5rem;
+    cursor: pointer;
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+}
+
+.nav-item:hover {
+    color: var(--text-dark);
+}
+
+.nav-item p {
+    font-weight: 400;
+    margin-left: 0.6rem;
+    float: right;
+}
+
+.nav-item h2 {
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 250px;
+}
+
+header h1 {
+    color: var(--text-light);
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+}
+
+header h1:hover {
+    color: var(--text-dark);
+}
+
+header p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--orange-dark);
+    margin-top: 0.4rem;
+    float: right;
+}
+
+.app-launcher {
+    width: 100vw;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.app-launcher:first-child {
+    margin-left: 0;
+}
+
+.app-launcher:last-child {
+    margin-right: 0;
+}
+
+div.card {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 160px;
+    height: 160px;
+    margin: 2rem;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    background: var(--bg-shadow-dark);
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+}
+
+div.card:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+    margin: 1rem 2rem 3rem 2rem;
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+}
+
+div.card:hover i {
+    color: var(--orange-light);
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+}
+
+div.card:hover h2 {
+    color: var(--text-light);
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+}
+
+div.card i {
+    color: var(--orange-dark);
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+div.card h2 {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media only screen and (max-width: 600px) {
+    .app-launcher {
+        padding: 0;
+    }
+    nav {
+        height: 40px;
+        margin-bottom: 60px;
+    }
+    .nav-item {
+        font-size: 0.6rem;
+        margin: 0 2.5rem;
+    }
+    .nav-item p {
+        margin-left: 0.3rem;
+    }
+    header {
+        height: 125px;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header p {
+        font-size: 0.5rem;
+        margin-top: 0.4rem;
+    }
+    div.card {
+        width: 90px;
+        height: 90px;
+        margin: 1rem;
+        padding: 10px;
+    }
+    div.card:hover {
+        margin: 0.5rem 1rem 1.5rem 1rem;
+    }
+    div.card i {
+        font-size: 1.8rem;
+        margin-bottom: 0.25em;
+    }
+    div.card h2 {
+        font-size: 0.6rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
