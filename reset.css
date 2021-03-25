@@ -42,6 +42,7 @@ a {
     text-decoration: none;
 }
 
-input, select, textarea {
+button, input, select, option {
     outline: none;
+    box-sizing: border-box;
 }
