@@ -1,8 +1,8 @@
-const buttons = document.querySelectorAll("button");
+const btns = document.querySelectorAll("button");
 const cli = document.querySelector("#basic-calculator-display-cli");
 const output = document.querySelector("#basic-calculator-display-output");
 
-buttons.forEach(function (currentBtn) {
+btns.forEach(function (currentBtn) {
   currentBtn.addEventListener("click", (e) => {
     // e.preventDefault();
     let currentKey = currentBtn.getAttribute("data-key");

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="fonts.css" />
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="main.css" />
-  <link rel="stylesheet" href="app-gcd-hcf-solver.css" />
+  <link rel="stylesheet" href="app-fraction-simplifier.css" />
   <title>CalcuLatte</title>
   <!-- Vendor -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,13 +25,29 @@
 
 <body>
   <nav>
-    <div class="nav-item" href="launcher-solvers.html">
-      <i class="la la-arrow-alt-circle-left" href="launcher-solvers.html"></i>
-      <p href="launcher-solvers.html">Back</p>
+    <div class="nav-item" href="launcher-simplifiers.html">
+      <i class="la la-arrow-alt-circle-left" href="launcher-simplifiers.html"></i>
+      <p href="launcher-simplifiers.html">Back</p>
     </div>
   </nav>
   <section id="fraction-simplifier" data-aos="fade-up">
+    <div class="container">
+      <input type="text" id="fraction-simplifier-numerator-input" value="Numerator" />
+    </div>
+    <hr />
+    <div class="container">
+      <input type="text" id="fraction-simplifier-denominator-input" value="Denominator" />
+    </div>
 
+    <div id="fraction-simplifier-equals-btn">=</div>
+
+    <div class="container">
+      <input type="text" id="fraction-simplifier-numerator-output" value="0" disabled />
+    </div>
+    <hr />
+    <div class="container">
+      <input type="text" id="fraction-simplifier-denominator-output" value="1" disabled />
+    </div>
   </section>
 
   <script src="links.js"></script>

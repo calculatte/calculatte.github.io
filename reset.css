@@ -45,4 +45,5 @@ a {
 button, input, select, option {
     outline: none;
     box-sizing: border-box;
+    text-align: center;
 }

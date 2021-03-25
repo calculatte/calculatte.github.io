@@ -11,7 +11,7 @@
   font-size: auto;
   height: 1rem;
   font-weight: 300;
-  color: var(--text-dark);
+  color: var(--text-grey);
   text-align: right;
   letter-spacing: 0.5rem;
   margin-bottom: 1rem;
@@ -21,7 +21,7 @@
   font-family: 'JetBrains Mono';
   font-size: 2.4rem;
   font-weight: 500;
-  color: var(--text-light);
+  color: var(--text-pseudowhite);
   text-align: right;
 }
 
@@ -37,7 +37,7 @@
   font-family: 'JetBrains Mono';
   font-size: 1.6rem;
   font-weight: 400;
-  color: var(--text-dark);
+  color: var(--text-grey);
   text-align: center;
   height: auto;
   width: auto;
@@ -56,7 +56,7 @@
 
 #basic-calculator .basic-calculator-numpad-transparent:hover {
   background: var(--silhouette-light);
-  color: var(--text-light);
+  color: var(--text-pseudowhite);
 }
 
 #basic-calculator .basic-calculator-numpad-orange {
@@ -65,7 +65,7 @@
 
 #basic-calculator .basic-calculator-numpad-orange:hover {
   background: var(--orange-light);
-  color: var(--text-light);
+  color: var(--text-pseudowhite);
 }
 
 #basic-calculator .basic-calculator-numpad-grey {
@@ -74,7 +74,7 @@
 
 #basic-calculator .basic-calculator-numpad-grey:hover {
   background: var(--silhouette-light);
-  color: var(--text-light);
+  color: var(--text-pseudowhite);
 }
 
 @media only screen and (max-width: 600px) {
