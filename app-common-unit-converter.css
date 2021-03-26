@@ -104,7 +104,7 @@
     font-size: calc(0.66 * 1.2rem);
     padding: calc(0.66 * 12px);
     width: calc(0.66 * 360px);
-    height: calc(0.66 * 45px);
+    height: auto;
   }
   #common-unit-converter input {
     width: calc(0.66 * 360px);

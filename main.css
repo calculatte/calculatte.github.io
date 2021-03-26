@@ -56,7 +56,7 @@ nav {
 
 .nav-item {
     color: var(--text-pseudowhite);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -196,7 +196,7 @@ div.card h2 {
         margin-bottom: calc(0.66 * 120px);
     }
     .nav-item {
-        font-size: calc(0.66 * 1.2rem);
+        font-size: calc(0.66 * 1.4rem);
         margin: calc(0.66 * 0) calc(0.66 * 5rem);
     }
     .nav-item p {
