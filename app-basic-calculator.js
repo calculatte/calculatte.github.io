@@ -37,4 +37,4 @@ btns.forEach(function (currentBtn) {
     }
 
   });
-})
+});

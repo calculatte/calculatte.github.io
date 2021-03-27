@@ -6,8 +6,8 @@
 }
 
 #fraction-simplifier input {
-  width: 200px;
   height: 64px;
+  width: 200px;
   padding-left: 12px;
   padding-right: 12px;
   border: 1px solid var(--border-grime);
@@ -38,17 +38,22 @@
 }
 
 #fraction-simplifier #fraction-simplifier-equals-btn {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-size: 1.6rem;
   background-color: var(--orange-dark);
   color: var(--text-grey);
-  padding: 20px;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: auto;
-  height: auto;
+  padding: auto;
+  height: 64px;
+  width: 64px;
+  border: 0;
   border-radius: 50%;
   transition: var(--stock);
   cursor: pointer;
+  margin: 3rem 0;
 }
 
 #fraction-simplifier #fraction-simplifier-equals-btn:hover {
@@ -58,16 +63,16 @@
 
 @media only screen and (max-width: 600px) {
   #fraction-simplifier input {
-    width: calc(0.66 * 200px);
     height: calc(0.66 * 64px);
-    padding-left: calc(0.66 * 12px);
-    padding-right: calc(0.66 * 12px);
+    width: calc(0.66 * 200px);
+    padding: calc(0.66 * 0) calc(0.66 * 12px);
     font-size: calc(0.66 * 1.2rem);
   }
   #fraction-simplifier #fraction-simplifier-equals-btn {
     font-size: calc(0.66 * 1.6rem);
     padding: calc(0.66 * 20px);
-    margin-top: calc(0.66 * 3rem);
-    margin-bottom: calc(0.66 * 3rem);
+    height: calc(0.66 * 64px);
+    width: calc(0.66 * 64px);
+    margin: calc(0.66 * 3rem) calc(0.66 * 0);
   }
 }

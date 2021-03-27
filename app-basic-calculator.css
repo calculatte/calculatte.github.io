@@ -1,7 +1,3 @@
-#basic-calculator {
-  width: auto;
-}
-
 #basic-calculator #basic-calculator-display {
   padding: 2rem;
 }
@@ -39,9 +35,8 @@
   font-weight: 400;
   color: var(--text-grey);
   text-align: center;
-  height: auto;
-  width: auto;
-  padding: 20px;
+  height: 64px;
+  width: 64px;
   border: 0;
   border-radius: 50%;
   transition: var(--stock);
@@ -95,6 +90,7 @@
   }
   #basic-calculator .basic-calculator-numpad-key {
     font-size: calc(0.66 * 1.6rem);
-    padding: calc(0.66 * 20px);
+    height: calc(0.66 * 64px);
+    width: calc(0.66 * 64px);
   }
 }

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="fonts.css" />
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="main.css" />
-  <link rel="stylesheet" href="app-gcd-hcf-solver.css" />
+  <link rel="stylesheet" href="app-shortest-path-solver.css" />
   <title>CalcuLatte</title>
   <!-- Vendor -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,20 +30,32 @@
       <p href="launcher-solvers.html">Back</p>
     </div>
   </nav>
-  <section id="gcd-hcf-solver" data-aos="fade-up">
-    <div class="container">
-      <input type="text" id="gcd-hcf-solver-first-input" placeholder="First number" />
-      <input type="text" id="gcd-hcf-solver-second-input" placeholder="Second number" />
+
+  <section id="shortest-path-solver" data-aos="fade-up">
+    <div class="container" id="startNode-container">
+      <input type="text" value="startNode" disabled>
+
+      <input type="text" id="startNode-child-name-input" placeholder="Child Name">
+
+      <input type="text" id="startNode-child-distance-input" placeholder="Distance">
+      <button class="node-child-btn" id="startNode-child-btn">+</button>
     </div>
-    <div id="gcd-hcf-solver-equals-btn">=</div>
+
+    <div class="container" id="shortest-path-solver-middle-container"></div>
+
+    <div class="container" id="finishNode-container">
+      <input type="text" value="finishNode" disabled>
+    </div>
+
     <div class="container">
-      <input type="text" id="gcd-hcf-solver-output" placeholder="1" disabled />
+      <div id="shortest-path-solver-equals-btn">=</div>
     </div>
   </section>
 
+
   <script src="links.js"></script>
   <script src="loader.js"></script>
-  <script src="app-gcd-hcf-solver.js"></script>
+  <script src="app-shortest-path-solver.js"></script>
 </body>
 
 </html>

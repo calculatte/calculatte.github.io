@@ -1,0 +1,110 @@
+#shortest-path-solver {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#shortest-path-solver .container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#shortest-path-solver input {
+  width: 240px;
+  height: 64px;
+  padding: 0 12px;
+  border: 1px solid var(--border-grime);
+  border-radius: 4px;
+  background: var(--bg-grey-dark);
+  font-family: 'JetBrains Mono';
+  font-size: 1.2rem;
+  color: var(--text-grey);
+  transition: var(--stock);
+  margin-bottom: 1rem;
+}
+
+#shortest-path-solver input:hover {
+  border: 1px solid var(--border-pseudowhite);
+}
+
+#shortest-path-solver input:focus {
+  color: var(--text-pseudowhite);
+  border: 1px solid var(--orange-dark);
+}
+
+#shortest-path-solver button {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: var(--orange-dark);
+  color: var(--text-grey);
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 50%;
+  transition: var(--stock);
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+#shortest-path-solver button:hover {
+  background: var(--orange-light);
+  color: var(--text-pseudowhite);
+}
+
+#shortest-path-solver #finishNode-container {
+  justify-content: flex-start;
+}
+
+#shortest-path-solver #finishNode-container input {
+  float: left;
+}
+
+#shortest-path-solver #shortest-path-solver-equals-btn {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: var(--orange-dark);
+  color: var(--text-grey);
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 50%;
+  transition: var(--stock);
+  cursor: pointer;
+}
+
+#shortest-path-solver #shortest-path-solver-equals-btn:hover {
+  background: var(--orange-light);
+  color: var(--text-pseudowhite);
+}
+
+@media only screen and (max-width: 600px) {
+  #shortest-path-solver input {
+    width: calc(0.66 * 240px);
+    height: calc(0.66 * 64px);
+    padding: calc(0.66 * 0) calc(0.66 * 12px);
+    font-size: calc(0.66 * 1.2rem);
+    margin-bottom: calc(0.66 * 1rem);
+  }
+  #shortest-path-solver button {
+    font-size: calc(0.66 * 1.6rem);
+    width: calc(0.66 * 64px);
+    height: calc(0.66 * 64px);
+    margin-bottom: calc(0.66 * 3rem);
+  }
+  #shortest-path-solver #shortest-path-solver-equals-btn {
+    font-size: calc(0.66 * 1.6rem);
+    width: calc(0.66 * 64px);
+    height: calc(0.66 * 64px);
+  }
+}
