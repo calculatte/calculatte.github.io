@@ -6,17 +6,16 @@
 }
 
 #fraction-simplifier input {
-  height: 64px;
-  width: 200px;
-  padding-left: 12px;
-  padding-right: 12px;
   border: 1px solid var(--border-grime);
   border-radius: 4px;
   background: var(--bg-grey-dark);
   font-family: 'JetBrains Mono';
-  font-size: 1.2rem;
   color: var(--text-grey);
   transition: var(--stock);
+  font-size: 1.2rem;
+  height: 64px;
+  width: 200px;
+  padding: 0 12px;
 }
 
 #fraction-simplifier input:hover {
@@ -29,7 +28,7 @@
 }
 
 #fraction-simplifier hr {
-  width: calc(100% - 6px);
+  width: calc(100% - 4px);
   height: 1px;
   border: 0;
   border-top: 1px solid var(--text-grey);
@@ -43,16 +42,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 1.6rem;
   background-color: var(--orange-dark);
   color: var(--text-grey);
-  padding: auto;
-  height: 64px;
-  width: 64px;
   border: 0;
   border-radius: 50%;
   transition: var(--stock);
   cursor: pointer;
+  font-size: 1.6rem;
+  height: 64px;
+  width: 64px;
   margin: 3rem 0;
 }
 
@@ -63,14 +61,13 @@
 
 @media only screen and (max-width: 600px) {
   #fraction-simplifier input {
+    font-size: calc(0.66 * 1.2rem);
     height: calc(0.66 * 64px);
     width: calc(0.66 * 200px);
     padding: calc(0.66 * 0) calc(0.66 * 12px);
-    font-size: calc(0.66 * 1.2rem);
   }
   #fraction-simplifier #fraction-simplifier-equals-btn {
     font-size: calc(0.66 * 1.6rem);
-    padding: calc(0.66 * 20px);
     height: calc(0.66 * 64px);
     width: calc(0.66 * 64px);
     margin: calc(0.66 * 3rem) calc(0.66 * 0);

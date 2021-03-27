@@ -13,16 +13,16 @@
 }
 
 #shortest-path-solver input {
-  width: 240px;
-  height: 64px;
-  padding: 0 12px;
   border: 1px solid var(--border-grime);
   border-radius: 4px;
   background: var(--bg-grey-dark);
   font-family: 'JetBrains Mono';
-  font-size: 1.2rem;
   color: var(--text-grey);
   transition: var(--stock);
+  font-size: 1.2rem;
+  width: 240px;
+  height: 64px;
+  padding: 0 12px;
   margin-bottom: 1rem;
 }
 
@@ -41,15 +41,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 1.6rem;
   background-color: var(--orange-dark);
   color: var(--text-grey);
-  width: 64px;
-  height: 64px;
   border: 0;
   border-radius: 50%;
   transition: var(--stock);
   cursor: pointer;
+  font-size: 1.6rem;
+  width: 64px;
+  height: 64px;
   margin-bottom: 3rem;
 }
 
@@ -72,15 +72,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 1.6rem;
   background-color: var(--orange-dark);
   color: var(--text-grey);
-  width: 64px;
-  height: 64px;
   border: 0;
   border-radius: 50%;
   transition: var(--stock);
   cursor: pointer;
+  font-size: 1.6rem;
+  width: 64px;
+  height: 64px;
 }
 
 #shortest-path-solver #shortest-path-solver-equals-btn:hover {
@@ -90,10 +90,10 @@
 
 @media only screen and (max-width: 600px) {
   #shortest-path-solver input {
+    font-size: calc(0.66 * 1.2rem);
     width: calc(0.66 * 240px);
     height: calc(0.66 * 64px);
     padding: calc(0.66 * 0) calc(0.66 * 12px);
-    font-size: calc(0.66 * 1.2rem);
     margin-bottom: calc(0.66 * 1rem);
   }
   #shortest-path-solver button {
