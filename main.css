@@ -1,78 +1,94 @@
 :root {
-    font-size: 13px;
+    font-size: 14px;
     --silhouette-light: rgba(255, 255, 255, 0.1);
     --silhouette-dark: rgba(0, 0, 0, 0.1);
     --orange-light: #F5A00D;
     --orange-dark: #ED8200;
-    --text-grey: #DEDEDE;
-    --text-pseudowhite: #FBFBFB;
-    --bg-pseudowhite: #F0F0F0;
-    --bg-white: #FBFBFB;
+    --grey-light: #EFEFEF;
+    --grey-medium: #DEDEDE;
+    --grey-dark: #CDCDCD;
+    --pseudowhite: #FBFBFB;
     --border-pseudowhite: #F0F0F0;
     --border-grime: #040405;
-    --bg-pseudoblack: #18191C;
-    --bg-grey-light: #36393F;
-    --bg-grey-dark: #2F3136;
+    --pseudoblack: #23272A;
+    --carbon-light: #36393F;
+    --carbon-dark: #2C2F33;
     --bg-black: #020202;
-    --link-dark: #00B0F4;
-    --stock: all 0.1s ease-in-out;
+    --blue-medium: #00B0F4;
+    --stock: all 0.15s ease-in-out;
 }
 
-html, body {
+::placeholder {
+    color: var(--silhouette-light);
+}
+
+::-moz-placeholder {
+    color: var(--silhouette-light);
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
     font-family: 'Poppins';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-    overflow: visible;
 }
 
 body {
-    background: var(--bg-grey-light);
+    background: var(--pseudoblack);
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 nav {
-    background: var(--bg-pseudoblack);
+    background: var(--pseudoblack);
     left: 0;
     top: 0;
     right: 0;
     width: 100vw;
-    height: 80px;
-    margin-bottom: 120px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid var(--bg-black);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    height: 100px;
+    margin-bottom: 50px;
 }
 
 .nav-item {
-    color: var(--text-pseudowhite);
-    font-size: 1.4rem;
+    border: 2px solid var(--orange-dark);
+    color: var(--orange-dark);
+    border-radius: 4px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    margin: 0 5rem;
     cursor: pointer;
     transition: var(--stock);
     -webkit-transition: var(--stock);
     -moz-transition: var(--stock);
+    margin: 0 2rem;
+    padding: 1rem;
 }
 
 .nav-item:hover {
-    color: var(--text-grey);
+    border: 2px solid var(--orange-light);
+    color: var(--orange-light);
+}
+
+.nav-item i {
+    font-size: 1.2rem;
 }
 
 .nav-item p {
     font-weight: 400;
-    margin-left: 0.6rem;
     float: right;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
 }
 
 .nav-item h2 {
@@ -92,8 +108,7 @@ header {
 }
 
 header h1 {
-    color: var(--text-pseudowhite);
-    font-size: 3.6rem;
+    color: white;
     font-weight: 600;
     text-transform: lowercase;
     letter-spacing: 0;
@@ -101,18 +116,19 @@ header h1 {
     transition: var(--stock);
     -webkit-transition: var(--stock);
     -moz-transition: var(--stock);
+    font-size: 3.6rem;
 }
 
 header h1:hover {
-    color: var(--text-grey);
+    color: lightgrey;
 }
 
 header p {
-    font-size: 1rem;
     font-weight: 400;
     color: var(--orange-dark);
-    margin-top: 0.4rem;
     float: right;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
 .app-launcher {
@@ -134,28 +150,28 @@ header p {
 div.card {
     display: flex;
     flex-flow: column nowrap;
-    width: 120px;
-    height: 120px;
-    margin: 2rem;
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
-    background: var(--bg-grey-dark);
-    padding: 20px;
+    background: var(--carbon-dark);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-radius: 5px;
     cursor: pointer;
     transition: var(--stock);
     -webkit-transition: var(--stock);
     -moz-transition: var(--stock);
+    width: 120px;
+    height: 120px;
+    margin: 2rem;
+    padding: 20px;
 }
 
 div.card:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
-    margin: 1rem 2rem 3rem 2rem;
     transition: var(--stock);
     -webkit-transition: var(--stock);
     -moz-transition: var(--stock);
+    margin: 1rem 2rem 3rem 2rem;
 }
 
 div.card:hover i {
@@ -166,7 +182,7 @@ div.card:hover i {
 }
 
 div.card:hover h2 {
-    color: var(--text-pseudowhite);
+    color: white;
     transition: var(--stock);
     -webkit-transition: var(--stock);
     -moz-transition: var(--stock);
@@ -174,55 +190,164 @@ div.card:hover h2 {
 
 div.card i {
     color: var(--orange-dark);
-    font-size: 4rem;
     text-align: center;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
 }
 
 div.card h2 {
-    color: var(--text-grey);
-    font-size: 1.2rem;
+    color: lightgrey;
     font-weight: 400;
     text-align: center;
     line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.equals-btn, #shortest-path-solver button {
+    font-family: "Poppins";
+    font-weight: 300;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--orange-dark);
+    color: var(--pseudowhite);
+    border: 0;
+    border-radius: 50%;
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+    cursor: pointer;
+    font-size: 1.6rem;
+    width: 64px;
+    height: 64px;
+}
+
+.equals-btn:hover, #shortest-path-solver button:hover {
+    background-color: var(--orange-light);
+    color: white;
+}
+
+input {
+    background: var(--silhouette-dark);
+    border: 2px solid var(--silhouette-light);
+    border-radius: 4px;
+    font-family: 'Poppins';
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+    box-sizing: border-box;
+    color: var(--pseudowhite);
+    height: 64px;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+}
+
+input:hover {
+    border: 2px solid var(--orange-dark);
+}
+
+input:focus {
+    border: 2px solid var(--orange-light);
+}
+
+select {
+    font-family: 'Poppins';
+    background: url(http://ssl.gstatic.com/ui/v1/disclosure/grey-disclosure-arrow-up-down.png) 100% no-repeat var(--pseudowhite);
+    border-left: 2px solid var(--pseudowhite);
+    border-right: 2px solid var(--pseudowhite);
+    border-bottom: 2px solid var(--pseudowhite);
+    border-top: 0;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-radius: 4px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    appearance: none;
+    background-position-x: 98%;
+    transition: var(--stock);
+    -webkit-transition: var(--stock);
+    -moz-transition: var(--stock);
+    height: 56px;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+}
+
+select:hover {
+    background-color: white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .10);
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+}
+
+hr {
+    width: calc(100% - 4px);
+    height: 1px;
+    border: 0;
+    border-top: 2px solid var(--silhouette-light);
+    margin: -2px 0 -3px 0;
+    z-index: 0;
 }
 
 @media only screen and (max-width: 600px) {
     nav {
-        height: calc(0.66 * 80px);
-        margin-bottom: calc(0.66 * 120px);
+        height: calc(0.74 * 100px);
+        margin-bottom: calc(0.74 * 50px);
     }
     .nav-item {
-        font-size: calc(0.66 * 1.4rem);
-        margin: calc(0.66 * 0) calc(0.66 * 5rem);
+        margin: calc(0.74 * 0) calc(0.74 * 2rem);
+        padding: calc(0.74 * 1rem);
+    }
+    .nav-item i {
+        font-size: calc(0.74 * 1.2rem);
     }
     .nav-item p {
-        margin-left: calc(0.66 * 0.6rem);
+        font-size: calc(0.74 * 1.2rem);
+        margin-left: calc(0.74 * 0.5rem);
     }
     header {
-        height: calc(0.66 * 250px);
+        height: calc(0.74 * 250px);
     }
     header h1 {
-        font-size: calc(0.66 * 3.6rem);
+        font-size: calc(0.74 * 3.6rem);
     }
     header p {
-        font-size: calc(0.66 * 1rem);
-        margin-top: calc(0.66 * 0.8rem);
+        font-size: calc(0.74 * 1rem);
+        margin-top: calc(0.74 * 1rem);
     }
     div.card {
-        width: calc(0.66 * 120px);
-        height: calc(0.66 * 120px);
-        margin: calc(0.66 * 2rem);
-        padding: calc(0.66 * 20px);
+        width: calc(0.74 * 120px);
+        height: calc(0.74 * 120px);
+        margin: calc(0.74 * 2rem);
+        padding: calc(0.74 * 20px);
     }
     div.card:hover {
-        margin: calc(0.66 * 1rem) calc(0.66 * 2rem) calc(0.66 * 3rem) calc(0.66 * 2rem);
+        margin: calc(0.74 * 1rem) calc(0.74 * 2rem) calc(0.74 * 3rem) calc(0.74 * 2rem);
     }
     div.card i {
-        font-size: calc(0.66 * 4rem);
-        margin-bottom: calc(0.66 * 0.5rem);
+        font-size: calc(0.74 * 4rem);
+        margin-bottom: calc(0.74 * 0.5rem);
     }
     div.card h2 {
-        font-size: calc(0.66 * 1.2rem);
+        font-size: calc(0.74 * 1.2rem);
+    }
+    .equals-btn, #shortest-path-solver button {
+        font-size: calc(0.74 * 1.6rem);
+        width: calc(0.74 * 64px);
+        height: calc(0.74 * 64px);
+    }
+    input {
+        height: calc(0.74 * 64px);
+        font-size: calc(0.74 * 1.2rem);
+        padding: calc(0.74 * 0) calc(0.74 * 1rem);
+    }
+    select {
+        height: calc(0.74 * 56px);
+        font-size: calc(0.74 * 1.2rem);
+        padding: calc(0.74 * 0) calc(0.74 * 1rem);
     }
 }

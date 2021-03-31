@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="main.css" />
   <link rel="stylesheet" href="app-shortest-path-solver.css" />
+  <link rel="stylesheet" href="snackbar.css" />
   <title>CalcuLatte</title>
   <!-- Vendor -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -31,14 +32,14 @@
     </div>
   </nav>
 
-  <section id="shortest-path-solver" data-aos="fade-up">
+  <section id="shortest-path-solver" data-aos="fade-in">
     <div class="container" id="startNode-container">
       <input type="text" value="startNode" disabled>
-
+      <hr />
       <input type="text" id="startNode-child-name-input" placeholder="Child Name">
-
+      <hr />
       <input type="text" id="startNode-child-distance-input" placeholder="Distance">
-      <button class="node-child-btn" id="startNode-child-btn">+</button>
+      <button class="node-child-btn snackbar-trigger" id="startNode-child-btn">+</button>
     </div>
 
     <div class="container" id="shortest-path-solver-middle-container"></div>
@@ -48,13 +49,20 @@
     </div>
 
     <div class="container">
-      <div id="shortest-path-solver-equals-btn">=</div>
+      <div class="equals-btn snackbar-trigger" id="shortest-path-solver-equals-btn">=</div>
     </div>
   </section>
 
+  <div class="snackbar-container">
+    <div class="snackbar snackbar-1">Child added!</div>
+  </div>
+  <div class="snackbar-container">
+    <div class="snackbar snackbar-2">Solved using Dijkstra's algorithm. See console for details.</div>
+  </div>
 
   <script src="links.js"></script>
   <script src="loader.js"></script>
+  <script src="main.js"></script>
   <script src="app-shortest-path-solver.js"></script>
 </body>
 

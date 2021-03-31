@@ -1,26 +1,35 @@
-const graph = {
+let graph = {
   finishNode: {}
 };
 
 let createdNodes = [];
+let snackbarMsg;
 
 $("body").on("click", "button.node-child-btn", function (e) {
   e.preventDefault();
   let childName = $("#" + $(this).parent().attr('id').split("-", 1)[0] + "-child-name-input").val();
   let childDistance = $("#" + $(this).parent().attr('id').split("-", 1)[0] + "-child-distance-input").val();
   let childParent = $(this).parent().attr('id').split("-", 1)[0];
+
   if (createdNodes.includes(childName) || childName == "" || childDistance == "") return false;
+
   if (childName == "finishNode") {
     createdNodes.push(childName);
-    console.log("Created node " + childName + " with distance " + childDistance + " from " + childParent + ".");
+    snackbarMsg = "Created node " + childName + " with distance " + childDistance + " from " + childParent + ".";
+    document.querySelector(".snackbar-1").innerHTML = snackbarMsg;
+    $(".snackbar-1").addClass("shown"); setTimeout(function () { $(".snackbar-1").removeClass("shown"); }, 600 + 300);
+
     if (!graph[childParent]) graph[childParent] = {};
+
     graph[childParent][childName] = Number(childDistance);
     console.log(graph);
   }
+
   else {
     let newContainerDiv = document.createElement("DIV");
     newContainerDiv.classList.add("container");
     newContainerDiv.setAttribute("id", childName + "-container");
+
     let newNodeNameInput = document.createElement("INPUT");
     newNodeNameInput.setAttribute("type", "text");
     newNodeNameInput.setAttribute("value", childName);
@@ -41,27 +50,36 @@ $("body").on("click", "button.node-child-btn", function (e) {
     newNodeChildBtn.setAttribute("id", childName + "-child-btn");
     newNodeChildBtn.innerHTML = "+";
     newContainerDiv.appendChild(newNodeNameInput);
+    newContainerDiv.appendChild(document.createElement("HR"));
     newContainerDiv.appendChild(newNodeChildNameInput);
+    newContainerDiv.appendChild(document.createElement("HR"));
     newContainerDiv.appendChild(newNodeChildDistanceInput);
     newContainerDiv.appendChild(newNodeChildBtn);
     document.getElementById("shortest-path-solver-middle-container").appendChild(newContainerDiv);
 
     createdNodes.push(childName);
-    console.log("Created node " + childName + " with distance " + childDistance + " from " + childParent + ".");
+    snackbarMsg = "Created node " + childName + " with distance " + childDistance + " from " + childParent + ".";
+    document.querySelector(".snackbar-1").innerHTML = snackbarMsg;
+    $(".snackbar-1").addClass("shown"); setTimeout(function () { $(".snackbar-1").removeClass("shown"); }, 600 + 300);
+
     if (!graph[childParent]) graph[childParent] = {};
+
     graph[childParent][childName] = Number(childDistance);
     console.log(graph);
   }
 });
 
-
 document.querySelector("#shortest-path-solver-equals-btn").addEventListener("click", (e) => {
+  e.preventDefault();
   console.log('dijkstra', dijkstra(graph));
+  $(".snackbar-2").addClass("shown"); setTimeout(function () { $(".snackbar-2").removeClass("shown"); }, 2500 + 300);
 });
 
-
-// Auxilliary functions
-const findLowestCostNode = function (costs, processed) {
+// ------------------------------------------------------------
+// Inspired by: https://replit.com/@stella_sighs/dijkstramedium
+// ------------------------------------------------------------
+// Auxilliary function
+let findLowestCostNode = function (costs, processed) {
   // To reduce nodes in costs to lowest cost node (Accumulator: lowest; Iterated dummy: node;)
   return lowestCostNode = Object.keys(costs).reduce(function (lowest, node) {
     // Guard clause: To guard against non-existent lowest
@@ -73,12 +91,12 @@ const findLowestCostNode = function (costs, processed) {
 };
 
 // Main function
-const dijkstra = function (graph) {
+let dijkstra = function (graph) {
   // Initialiser: To initialise costs by adding startNode (child costs) and finishNode (child cost of Infinity)
-  const costs = Object.assign({ finishNode: Infinity }, graph.startNode);
+  let costs = Object.assign({ finishNode: Infinity }, graph.startNode);
 
   // Initialiser: To initialise parents by adding finishNode (pointing to null as no optimalPath has been found yet
-  const parents = { finishNode: null };
+  let parents = { finishNode: null };
 
   // Initialiser: For each child of startNode, point (each child of startNode) to startNode as parent
   for (let startNodeChild in graph.startNode) {
@@ -86,7 +104,7 @@ const dijkstra = function (graph) {
   }
 
   // Initialiser: To initialise processed as empty array
-  const processed = [];
+  let processed = [];
 
   // Initialiser: To initialise node as lowest cost node of startNode
   let node = findLowestCostNode(costs, processed);
@@ -139,7 +157,7 @@ const dijkstra = function (graph) {
 };
 
 /*
-const graph = {
+let graph = {
   startNode: { A: 5, B: 2 },
   A: { C: 4, D: 2 },
   B: { A: 8, D: 7 },

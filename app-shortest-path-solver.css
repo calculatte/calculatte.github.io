@@ -12,54 +12,13 @@
   align-items: center;
 }
 
-#shortest-path-solver input {
-  border: 1px solid var(--border-grime);
-  border-radius: 4px;
-  background: var(--bg-grey-dark);
-  font-family: 'JetBrains Mono';
-  color: var(--text-grey);
-  transition: var(--stock);
-  font-size: 1.2rem;
-  width: 240px;
-  height: 64px;
-  padding: 0 12px;
-  margin-bottom: 1rem;
-}
-
-#shortest-path-solver input:hover {
-  border: 1px solid var(--border-pseudowhite);
-}
-
-#shortest-path-solver input:focus {
-  color: var(--text-pseudowhite);
-  border: 1px solid var(--orange-dark);
-}
-
 #shortest-path-solver button {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: var(--orange-dark);
-  color: var(--text-grey);
-  border: 0;
-  border-radius: 50%;
-  transition: var(--stock);
-  cursor: pointer;
-  font-size: 1.6rem;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 3rem;
-}
-
-#shortest-path-solver button:hover {
-  background: var(--orange-light);
-  color: var(--text-pseudowhite);
+  margin: 2rem 0;
 }
 
 #shortest-path-solver #finishNode-container {
   justify-content: flex-start;
+  margin-top: 4rem;
 }
 
 #shortest-path-solver #finishNode-container input {
@@ -67,44 +26,17 @@
 }
 
 #shortest-path-solver #shortest-path-solver-equals-btn {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: var(--orange-dark);
-  color: var(--text-grey);
-  border: 0;
-  border-radius: 50%;
-  transition: var(--stock);
-  cursor: pointer;
-  font-size: 1.6rem;
-  width: 64px;
-  height: 64px;
-}
-
-#shortest-path-solver #shortest-path-solver-equals-btn:hover {
-  background: var(--orange-light);
-  color: var(--text-pseudowhite);
+  margin: 2rem 0;
 }
 
 @media only screen and (max-width: 600px) {
-  #shortest-path-solver input {
-    font-size: calc(0.66 * 1.2rem);
-    width: calc(0.66 * 240px);
-    height: calc(0.66 * 64px);
-    padding: calc(0.66 * 0) calc(0.66 * 12px);
-    margin-bottom: calc(0.66 * 1rem);
-  }
   #shortest-path-solver button {
-    font-size: calc(0.66 * 1.6rem);
-    width: calc(0.66 * 64px);
-    height: calc(0.66 * 64px);
-    margin-bottom: calc(0.66 * 3rem);
+    margin: calc(0.74 * 2rem) calc(0.74 * 0);
+  }
+  #shortest-path-solver #finishNode-container {
+    margin-top: calc(0.74 * 4rem);
   }
   #shortest-path-solver #shortest-path-solver-equals-btn {
-    font-size: calc(0.66 * 1.6rem);
-    width: calc(0.66 * 64px);
-    height: calc(0.66 * 64px);
+    margin: calc(0.74 * 2rem) calc(0.74 * 0);
   }
 }
