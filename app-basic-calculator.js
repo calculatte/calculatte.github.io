@@ -5,7 +5,7 @@ const output = document.querySelector("#basic-calculator-display-output");
 
 btns.forEach(function (currentBtn) {
 	currentBtn.addEventListener("click", (e) => {
-		// e.preventDefault();
+		e.preventDefault();
 		let currentKey = currentBtn.getAttribute("data-key");
 		// For terminating cases, cli is cleared, else currentKey is added on to cli
 		if (currentKey == "AC") {
@@ -77,7 +77,6 @@ btns.forEach(function (currentBtn) {
 						.join(bracketSecondSubstituents[j]);
 				}
 			}
-
 			/*
 			const bracketThirdSubstitutables = ["+*", "-*", "**", "/*"];
 			const bracketThirdSubstituents = ["+", "-", "*", "/"];
@@ -90,9 +89,7 @@ btns.forEach(function (currentBtn) {
 					}
 			}
 			*/
-			if (cli.innerHTML.charAt(0) == "*")
-				cli.innerHTML = cli.innerHTML.substring(1);
-
+			if (cli.innerHTML.charAt(0) == "*") cli.innerHTML = cli.innerHTML.substring(1);
 			// alert(cli.innerHTML);
 			output.innerHTML = eval(cli.innerHTML).toString();
 			// cli.innerHTML = "";
