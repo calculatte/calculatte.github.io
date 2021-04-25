@@ -6,7 +6,6 @@ let createdNodes = [];
 let snackbarMsg;
 
 $("body").on("click", "button.node-child-btn", function (e) {
-  e.preventDefault();
   let childName = $("#" + $(this).parent().attr('id').split("-", 1)[0] + "-child-name-input").val();
   let childDistance = $("#" + $(this).parent().attr('id').split("-", 1)[0] + "-child-distance-input").val();
   let childParent = $(this).parent().attr('id').split("-", 1)[0];
@@ -16,8 +15,8 @@ $("body").on("click", "button.node-child-btn", function (e) {
   if (childName == "finishNode") {
     createdNodes.push(childName);
     snackbarMsg = "Created node " + childName + " with distance " + childDistance + " from " + childParent + ".";
-    document.querySelector(".snackbar-1").innerHTML = snackbarMsg;
-    $(".snackbar-1").addClass("shown"); setTimeout(function () { $(".snackbar-1").removeClass("shown"); }, 600 + 300);
+    document.querySelector(".snackbar").innerHTML = snackbarMsg;
+    $(".snackbar").addClass("shown"); setTimeout(function () { $(".snackbar").removeClass("shown"); }, 600 + 300);
 
     if (!graph[childParent]) graph[childParent] = {};
 
@@ -59,8 +58,8 @@ $("body").on("click", "button.node-child-btn", function (e) {
 
     createdNodes.push(childName);
     snackbarMsg = "Created node " + childName + " with distance " + childDistance + " from " + childParent + ".";
-    document.querySelector(".snackbar-1").innerHTML = snackbarMsg;
-    $(".snackbar-1").addClass("shown"); setTimeout(function () { $(".snackbar-1").removeClass("shown"); }, 600 + 300);
+    document.querySelector(".snackbar").innerHTML = snackbarMsg;
+    $(".snackbar").addClass("shown"); setTimeout(function () { $(".snackbar").removeClass("shown"); }, 600 + 300);
 
     if (!graph[childParent]) graph[childParent] = {};
 
@@ -70,9 +69,8 @@ $("body").on("click", "button.node-child-btn", function (e) {
 });
 
 document.querySelector("#shortest-path-solver-equals-btn").addEventListener("click", (e) => {
-  e.preventDefault();
   console.log('dijkstra', dijkstra(graph));
-  $(".snackbar-2").addClass("shown"); setTimeout(function () { $(".snackbar-2").removeClass("shown"); }, 2500 + 300);
+  alert("Solved with Dijkstra's algorithm. See developer console for details.\n\n" + JSON.stringify(dijkstra(graph)));
 });
 
 // ------------------------------------------------------------
